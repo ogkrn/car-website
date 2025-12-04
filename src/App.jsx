@@ -18,6 +18,7 @@ import logo from './assets/logo.png';
 
 function App() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -145,14 +146,49 @@ function App() {
               className="hidden md:flex"
             />
             
-            <button className="md:hidden text-gray-300 hover:text-white transition-colors p-2">
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            <button
+              className="md:hidden text-gray-300 hover:text-white transition-colors p-2"
+              aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={mobileOpen}
+              onClick={() => setMobileOpen((s) => !s)}
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {mobileOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
               </svg>
             </button>
           </div>
         </nav>
       </header>
+
+      {/* Mobile menu (small screens) */}
+      {mobileOpen && (
+        <div className="md:hidden fixed left-1/2 -translate-x-1/2 top-24 z-40 w-[92%] max-w-md">
+          <div className="backdrop-blur-md bg-gray-900/70 border border-gray-700/50 rounded-xl p-4 shadow-2xl">
+            <nav className="flex flex-col gap-2">
+              {navItems.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={(e) => {
+                    if (item.href.startsWith('#')) {
+                      e.preventDefault();
+                      document.querySelector(item.href)?.scrollIntoView({ behavior: 'smooth' });
+                    }
+                    setMobileOpen(false);
+                  }}
+                  className="block px-4 py-3 rounded-lg text-center text-gray-200 font-medium hover:bg-white/5 transition-colors"
+                >
+                  {item.label}
+                </a>
+              ))}
+            </nav>
+          </div>
+        </div>
+      )}
 
       <div className="container mx-auto px-4 py-8 pt-32">
         <main className="space-y-12">
