@@ -1,0 +1,263 @@
+.price-calculator {
+  background: #1a1a1a;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  border: 1px solid #333;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.calculator-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.calculator-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.slider-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.slider-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  gap: 15px;
+}
+
+.slider-header label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #e5e5e5;
+  flex-shrink: 0;
+}
+
+.slider-input {
+  background: #2a2a2a;
+  border: 2px solid #444;
+  color: #9333ea;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 700;
+  width: 150px;
+  text-align: right;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.slider-input:focus {
+  border-color: #9333ea;
+  background: #333;
+}
+
+.slider-input.down-payment {
+  color: #10b981;
+}
+
+.slider-input.duration {
+  color: #ef4444;
+  width: 80px;
+}
+
+.duration-label {
+  color: #888;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Remove spinner arrows from number input */
+.slider-input::-webkit-inner-spin-button,
+.slider-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.slider-input[type=number] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.slider {
+  width: 100%;
+  height: 8px;
+  border-radius: 5px;
+  background: linear-gradient(to right, #6b21a8 0%, #9333ea 100%);
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #6b21a8;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(107, 33, 168, 0.4);
+  transition: all 0.3s ease;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: 0 4px 12px rgba(107, 33, 168, 0.6);
+}
+
+.slider::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #6b21a8;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 8px rgba(107, 33, 168, 0.4);
+  transition: all 0.3s ease;
+}
+
+.slider::-moz-range-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: 0 4px 12px rgba(107, 33, 168, 0.6);
+}
+
+.down-payment-slider {
+  background: linear-gradient(to right, #059669 0%, #10b981 100%);
+}
+
+.down-payment-slider::-webkit-slider-thumb {
+  background: #059669;
+  box-shadow: 0 2px 8px rgba(5, 150, 105, 0.4);
+}
+
+.down-payment-slider::-moz-range-thumb {
+  background: #059669;
+  box-shadow: 0 2px 8px rgba(5, 150, 105, 0.4);
+}
+
+.duration-slider {
+  background: linear-gradient(to right, #dc2626 0%, #ef4444 100%);
+}
+
+.duration-slider::-webkit-slider-thumb {
+  background: #dc2626;
+  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.4);
+}
+
+.duration-slider::-moz-range-thumb {
+  background: #dc2626;
+  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.4);
+}
+
+.slider-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #888;
+  margin-top: 5px;
+}
+
+.emi-result {
+  background: linear-gradient(135deg, #6b21a8 0%, #9333ea 100%);
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  color: white;
+  margin-top: 10px;
+}
+
+.emi-amount {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.currency-symbol {
+  font-size: 32px;
+  font-weight: 700;
+  color: #10b981;
+}
+
+.amount {
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.per-month {
+  font-size: 16px;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.check-eligibility-btn {
+  background: white;
+  color: #6b21a8;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.check-eligibility-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.calculator-note {
+  background: #2a2a2a;
+  border-radius: 8px;
+  padding: 15px;
+  font-size: 12px;
+  color: #888;
+  line-height: 1.6;
+  border: 1px solid #444;
+}
+
+.calculator-note p {
+  margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+  .price-calculator {
+    padding: 20px;
+  }
+
+  .calculator-title {
+    font-size: 24px;
+  }
+
+  .amount {
+    font-size: 36px;
+  }
+
+  .currency-symbol {
+    font-size: 24px;
+  }
+
+  .emi-result {
+    padding: 20px;
+  }
+}

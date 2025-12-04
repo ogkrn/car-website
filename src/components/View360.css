@@ -1,0 +1,273 @@
+.view-360-button {
+  background: linear-gradient(135deg, #6b21a8 0%, #9333ea 100%);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(107, 33, 168, 0.3);
+}
+
+.view-360-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(107, 33, 168, 0.4);
+}
+
+.icon-360 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-content {
+  background: #1a1a1a;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: slideUp 0.3s ease;
+  border: 1px solid #333;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #2a2a2a;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 28px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+  color: #fff;
+}
+
+.modal-close:hover {
+  background: #333;
+  transform: rotate(90deg);
+}
+
+.modal-header {
+  text-align: center;
+  padding: 30px 20px 20px;
+  border-bottom: 2px solid #333;
+}
+
+.modal-header h2 {
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.modal-header p {
+  color: #a0a0a0;
+  font-size: 14px;
+}
+
+.view-360-container {
+  padding: 40px;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  position: relative;
+}
+
+.view-360-container .Sirv {
+  width: 100%;
+  height: 100%;
+  max-width: 800px;
+  min-height: 400px;
+}
+
+.view-360-container:active {
+  cursor: default;
+}
+
+.car-3d-view {
+  width: 400px;
+  height: 300px;
+  transform-style: preserve-3d;
+  transition: transform 0.1s ease-out;
+}
+
+.car-360-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
+}
+
+.car-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.car-body {
+  width: 300px;
+  height: 150px;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.car-top {
+  position: absolute;
+  top: 0;
+  left: 50px;
+  width: 200px;
+  height: 80px;
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  border-radius: 40px 40px 0 0;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.car-front {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 300px;
+  height: 70px;
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.car-side {
+  position: absolute;
+  bottom: 20px;
+  left: 60px;
+  width: 180px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+.car-wheel {
+  position: absolute;
+  bottom: -15px;
+  width: 60px;
+  height: 60px;
+  background: #1f2937;
+  border-radius: 50%;
+  border: 8px solid #374151;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+.wheel-front {
+  left: 20px;
+}
+
+.wheel-back {
+  right: 20px;
+}
+
+.rotation-indicator {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.modal-footer {
+  text-align: center;
+  padding: 20px;
+  border-top: 2px solid #333;
+  background: #0a0a0a;
+  border-radius: 0 0 16px 16px;
+}
+
+.modal-footer p {
+  color: #a0a0a0;
+  font-size: 14px;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .view-360-container {
+    padding: 20px;
+    min-height: 400px;
+  }
+
+  .view-360-container .Sirv {
+    max-width: 100%;
+    min-height: 300px;
+  }
+
+  .car-body {
+    width: 250px;
+    height: 125px;
+  }
+
+  .car-top {
+    width: 160px;
+    height: 65px;
+    left: 45px;
+  }
+
+  .car-front {
+    width: 250px;
+    height: 60px;
+  }
+
+  .car-wheel {
+    width: 50px;
+    height: 50px;
+  }
+}
