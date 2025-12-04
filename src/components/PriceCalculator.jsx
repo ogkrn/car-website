@@ -69,7 +69,7 @@ const PriceCalculator = ({ carPrice = 999000 }) => {
   };
 
   return (
-    <div className="max-w-5xl mx-auto relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-6 md:p-8 border border-gray-700 shadow-2xl overflow-hidden">
+    <div className="max-w-5xl mx-auto relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-6 md:p-8 border border-gray-700 shadow-2xl overflow-hidden glass-effect hover-lift">
       <div className="absolute inset-0 bg-linear-to-br from-purple-900/40 via-gray-900/60 to-blue-900/40"></div>
       <div className="relative z-10">
       <h2 className="text-2xl md:text-3xl font-bold text-white mb-8">EMI Calculator</h2>
@@ -178,7 +178,7 @@ const PriceCalculator = ({ carPrice = 999000 }) => {
         </div>
 
         {/* EMI Result */}
-        <div ref={emiCardRef} className="bg-linear-to-br from-purple-600 to-purple-800 rounded-xl p-6 mt-8">
+        <div ref={emiCardRef} className="bg-linear-to-br from-purple-600 to-purple-800 rounded-xl p-6 mt-8 hover-lift">
           <div className="text-center">
             <div className="text-purple-200 text-sm mb-2">Your Monthly EMI</div>
             <div className="text-4xl md:text-5xl font-bold text-white mb-4">

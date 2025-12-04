@@ -192,9 +192,9 @@ const CarOverview = ({ carData }) => {
       </div>
 
       {/* Key Features */}
-      <div className="max-w-5xl mx-auto relative bg-gray-900 rounded-2xl p-6 md:p-8 border border-gray-800 overflow-hidden">
+      <div className="max-w-5xl mx-auto relative bg-gray-900 rounded-2xl p-6 md:p-8 border border-gray-800 overflow-hidden glass-effect hover-lift">
         <div className="absolute inset-0 bg-linear-to-br from-purple-900/40 via-gray-900/60 to-blue-900/40"></div>
-        <div className="relative z-10">
+        <div className="relative z-10"> 
         <h2 className="text-2xl font-bold mb-6">
           <GradientText
             colors={["#ffffff", "#c084fc", "#ffffff", "#c084fc", "#ffffff"]}
@@ -205,7 +205,7 @@ const CarOverview = ({ carData }) => {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {features.map((feature, index) => (
-            <div key={index} ref={addCardRef} className="flex items-center gap-3 p-3 bg-gray-800 rounded-lg">
+            <div key={index} ref={addCardRef} className="flex items-center gap-3 p-3 bg-gray-800 rounded-lg hover-lift">
               <svg className="w-5 h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
