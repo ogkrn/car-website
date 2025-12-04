@@ -69,7 +69,9 @@ const PriceCalculator = ({ carPrice = 999000 }) => {
   };
 
   return (
-    <div className="max-w-5xl mx-auto bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-6 md:p-8 border border-gray-700 shadow-2xl">
+    <div className="max-w-5xl mx-auto relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-6 md:p-8 border border-gray-700 shadow-2xl overflow-hidden">
+      <div className="absolute inset-0 bg-linear-to-br from-purple-900/40 via-gray-900/60 to-blue-900/40"></div>
+      <div className="relative z-10">
       <h2 className="text-2xl md:text-3xl font-bold text-white mb-8">EMI Calculator</h2>
       
       <div className="space-y-8">
@@ -203,6 +205,7 @@ const PriceCalculator = ({ carPrice = 999000 }) => {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

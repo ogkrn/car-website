@@ -120,57 +120,41 @@ function App() {
       duration={400}
     >
       <div className="min-h-screen bg-gray-950">
-      {/* Full Navbar - hides on scroll */}
-      <header className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-gray-950/95 border-b border-purple-500/20 shadow-lg shadow-purple-500/5 transition-transform duration-300 ${isScrolled ? '-translate-y-full' : 'translate-y-0'}`}>
-        <div className="container mx-auto px-4 py-3">
-          <div className="flex items-center justify-between">
+      {/* Glassmorphic Navbar with PillNav */}
+      <header className={`fixed top-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 ${isScrolled ? 'top-4' : 'top-6'}`}>
+        <nav className="backdrop-blur-md bg-gray-900/60 border border-gray-700/50 rounded-full px-6 py-3 shadow-2xl shadow-black/20">
+          <div className="flex items-center gap-8">
             <div className="flex items-center gap-3 group">
               <div className="relative">
                 <div className="absolute inset-0 bg-purple-600/20 blur-xl group-hover:bg-purple-600/30 transition-all rounded-full"></div>
-                <img src={logo} alt="Mahindra Logo" className="w-12 h-12 object-contain relative z-10 drop-shadow-2xl" />
+                <img src={logo} alt="Mahindra Logo" className="w-8 h-8 object-contain relative z-10 drop-shadow-2xl" />
               </div>
-              <GradientText
-                colors={["#f59e0b", "#eab308", "#f59e0b", "#eab308", "#f59e0b"]}
-                animationSpeed={3}
-                className="text-2xl font-bold tracking-wider"
-              >
+              <span className="text-xl font-bold tracking-wider text-transparent bg-clip-text bg-linear-to-r from-amber-500 to-yellow-500">
                 CARS
-              </GradientText>
+              </span>
             </div>
             
             <PillNav
               items={navItems}
               activeHref="#gallery"
               ease="power2.easeOut"
+              baseColor="transparent"
               pillColor="rgb(188, 127, 3)"
               hoveredPillTextColor="#ffffff"
-              pillTextColor="#e5e7eb"
+              pillTextColor="#d1d5db"
               className="hidden md:flex"
             />
             
-            <button className="md:hidden text-gray-300 hover:text-purple-400 transition-colors">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <button className="md:hidden text-gray-300 hover:text-white transition-colors p-2">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             </button>
           </div>
-        </div>
+        </nav>
       </header>
 
-      {/* Floating PillNav - appears on scroll in top right */}
-      <div className={`fixed top-4 right-4 z-50 transition-all duration-300 ${isScrolled ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
-        <PillNav
-          items={navItems}
-          activeHref="#gallery"
-          ease="power2.easeOut"
-          pillColor="rgb(188, 127, 3)"
-          hoveredPillTextColor="#ffffff"
-          pillTextColor="#e5e7eb"
-          className="hidden md:flex"
-        />
-      </div>
-
-      <div className="container mx-auto px-4 py-8 pt-24">
+      <div className="container mx-auto px-4 py-8 pt-32">
         <main className="space-y-12">
         <section id="gallery" className="space-y-6 animate-fadeIn">
           <div className="max-w-5xl mx-auto">

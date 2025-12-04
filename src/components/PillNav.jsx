@@ -60,8 +60,8 @@ const PillNav = ({
   return (
     <nav 
       ref={navRef}
-      className={`flex items-center gap-6 px-6 py-2 rounded-full relative backdrop-blur-md bg-gray-900/40 border border-purple-500/20 shadow-lg ${className}`}
-      style={{ backgroundColor: 'transparent' }}
+      className={`flex items-center gap-6 px-0 py-0 rounded-full relative ${className}`}
+      style={{ backgroundColor: 'transparent', border: 'none' }}
     >
       {logo && (
         <div className="flex items-center z-10">

@@ -62,6 +62,7 @@ const CarOverview = ({ carData }) => {
     <div className="space-y-8">
       {/* Header Section */}
       <div ref={addCardRef} className="max-w-5xl mx-auto relative glass-effect rounded-2xl p-6 md:p-8 shadow-2xl overflow-hidden hover-lift group">
+        <div className="absolute inset-0 bg-linear-to-br from-purple-900/40 via-gray-900/60 to-blue-900/40"></div>
         <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-transparent to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
         <div className="flex flex-col md:flex-row justify-between items-start gap-6 relative z-10">
           <div className="flex-1">
@@ -106,7 +107,9 @@ const CarOverview = ({ carData }) => {
       </div>
 
       {/* Technical Specifications */}
-      <div className="max-w-5xl mx-auto glass-effect rounded-2xl p-6 md:p-8 hover-lift">
+      <div className="max-w-5xl mx-auto relative glass-effect rounded-2xl p-6 md:p-8 hover-lift overflow-hidden">
+        <div className="absolute inset-0 bg-linear-to-br from-purple-900/40 via-gray-900/60 to-blue-900/40"></div>
+        <div className="relative z-10">
         <h2 className="text-2xl md:text-3xl font-bold mb-6">
           <GradientText
             colors={["#ffffff", "#c084fc", "#ffffff", "#c084fc", "#ffffff"]}
@@ -185,10 +188,13 @@ const CarOverview = ({ carData }) => {
             </div>
           </div>
         </div>
+        </div>
       </div>
 
       {/* Key Features */}
-      <div className="max-w-5xl mx-auto bg-gray-900 rounded-2xl p-6 md:p-8 border border-gray-800">
+      <div className="max-w-5xl mx-auto relative bg-gray-900 rounded-2xl p-6 md:p-8 border border-gray-800 overflow-hidden">
+        <div className="absolute inset-0 bg-linear-to-br from-purple-900/40 via-gray-900/60 to-blue-900/40"></div>
+        <div className="relative z-10">
         <h2 className="text-2xl font-bold mb-6">
           <GradientText
             colors={["#ffffff", "#c084fc", "#ffffff", "#c084fc", "#ffffff"]}
@@ -206,6 +212,7 @@ const CarOverview = ({ carData }) => {
               <span className="text-gray-300">{feature}</span>
             </div>
           ))}
+        </div>
         </div>
       </div>
     </div>
